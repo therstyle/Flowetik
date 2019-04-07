@@ -3,8 +3,8 @@
 <div class="bg-video">
 	<div class="video">
 		<video autoplay="true" muted="true" loop="true" class="full-height">
-			<source src="<?php echo get_template_directory_uri(); ?>/video/flowetik-web.mp4" type="video/mp4" />
-			<source src="<?php echo get_template_directory_uri(); ?>/video/flowetik-web.ogv" type="video/ogg" />
+			<source src="<?php echo get_template_directory_uri(); ?>/video/flowetik-cloud-web.mp4" type="video/mp4" />
+			<source src="<?php echo get_template_directory_uri(); ?>/video/flowetik-cloud-web.ogv" type="video/ogg" />
 		</video>
 	</div>
 </div>

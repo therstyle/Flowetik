@@ -32,6 +32,7 @@ body {
 	font-weight: 300;
 	font-size: 18px;
 	line-height: 30px;
+	color: $evening;
 }
 
 body:not(.home) {
@@ -46,7 +47,7 @@ body.page.has-top-image, body.blog {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: $dark-green;
+	color: $stormy;
 	text-transform: lowercase;
 	font-family: $headline-font;
 }
@@ -83,7 +84,7 @@ ul:not([class]), .widget_categories ul {
 		&:before {
 			display: inline-block;
 			content: '';
-			background-color: $yellow;
+			background-color: $cloud;
 			border-radius: 100%;
 			width: 10px;
 			height: 10px;
@@ -154,7 +155,7 @@ section {
 }
 
 hr {
-	border-top: 1px solid $yellow;
+	border-top: 1px solid $cloud;
 }
 
 hr.lg {
@@ -217,7 +218,7 @@ p:empty {
 }
 
 body.home .bg-video {
-  background: $dark-green url(video/flowetik-poster.jpg) no-repeat bottom right fixed;
+  background: $cloud url(video/flowetik-poster.jpg) no-repeat bottom right fixed;
 	background-size: cover;
 }
 
@@ -241,9 +242,9 @@ body.home .bg-video {
 	}
 	.navbar-nav {
 		> li > a {
-			color: $dark-green;
+			color: $stormy;
 			&:hover {
-				color: $light-green;
+				color: lighten($stormy, 20%);
 			}
 		}
 		> li.active > a {}
@@ -256,7 +257,7 @@ body.home .bg-video {
 		background: none;
 		border: none;
 		.icon-bar {
-			background-color: $dark-green;
+			background-color: $stormy;
 		}
 	}
 	.navbar-collapse {
@@ -289,7 +290,7 @@ body.home .bg-video {
 }
 
 #footer {
-	background-color: $dark-green;
+	background-color: $cloud;
 	padding: $spacing 0;
 	color: $white;
 	font-size: 12px;
@@ -326,10 +327,10 @@ a, a:hover {
 }
 
 a:not([class]) {
-		color: $yellow;
+		color: $sunset;
 		transition: .3s color, .3s border-color;
 	&:hover {
-		color: darken($yellow, 10%);
+		color: darken($sunset, 10%);
 	}
   &:focus {
     text-decoration: none;
@@ -341,9 +342,10 @@ a:not([class]) {
 	transition: .3s background, .3s color, .3s border-color, .3s box-shadow;
 	font-weight: bold;
 	&.btn-primary {
-		background-color: $brand-primary;
+		background-color: $sunset;
+		border-color: transparent !important;
 		&:hover {
-			background-color: darken($brand-primary, 10%);
+			background-color: darken($sunset, 10%);
 		}
 	}
 	&.btn-icon {
@@ -462,7 +464,7 @@ section.repeater-general {
 #testimonials {
 	min-height: 450px;
 	color: $white;
-	background-color: $yellow;
+	background-color: $cloud;
 }
 
 .carousel-indicators {
@@ -475,6 +477,7 @@ section.repeater-general {
 	small {
 		display: block;
 		line-height: normal;
+		margin-bottom: $spacing;
 	}
 }
 
@@ -534,7 +537,7 @@ section.repeater-general {
 .date-icon {
 	text-align: center;
 	font-family: $headline-font;
-	color: $dark-green;
+	color: $stormy;
 	width: 64px;
 	height: 64px;
 	padding: 10px;
@@ -555,11 +558,11 @@ section.repeater-general {
 
 .pagination {
 	li a {
-		color: $yellow;
+		color: $cloud;
 		transition: .3s background, .3s color;
 	}
 	li.active span {
-		background: $yellow !important;
+		background: $cloud !important;
 		color: $white !important;
 		font-weight: bold;
 		border-color: transparent !important;
