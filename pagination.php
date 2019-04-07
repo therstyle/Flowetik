@@ -1,0 +1,1 @@
+<?php rstyle_pagination(); ?>
