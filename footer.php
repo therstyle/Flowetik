@@ -1,4 +1,4 @@
-<?php if (!is_page('contact')): ?>
+<?php if (!is_page('contact') && !is_404()): ?>
 	<?php get_template_part('partials/content', 'contact'); ?>
 <?php endif; ?>
 
