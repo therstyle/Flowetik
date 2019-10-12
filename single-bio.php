@@ -1,27 +1,40 @@
-<?php get_header(); ?>
+<?php 
+
+require_once get_template_directory().'/Controllers/Bio.php';
+
+use Controllers\Bio as Bio;
+$bio = new Bio();
+
+get_header(); 
+
+?>
 
 <section class="general">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 grid-space">
-				<?php the_post_thumbnail('bio', array('class' => 'img-center bio-portrait')); ?>
+				<?php the_post_thumbnail('bio', ['class' => 'img-center bio-portrait']); ?>
 			</div>
 			<div class="col-md-8 col-md-offset-1">
 		    <?php while(have_posts()): the_post(); ?>
 		      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		      	<header>
-		      		<h1 class="page-title no-margin"><?php the_title(); ?></h1>
-							<h3 class="sub-title"><?php the_field('position'); ?></h3>
+							<h1 class="page-title no-margin"><?php the_title(); ?></h1>
+							
+							<?php if($bio->get_info()['position']): ?>
+								<h3 class="sub-title"><?php echo $bio->get_info()['position']; ?></h3>
+							<?php endif; ?>
+
 							<hr class="lg" />
-		      	</header><!-- .entry-header -->
+		      	</header>
 
 		      	<div class="entry-content">
 		      		<?php the_content(); ?>
-		      	</div><!-- .entry-content -->
+		      	</div>
 
-		      		<?php edit_post_link( __('Edit', 'rstyle'), '<span class="edit-link">', '</span>'); ?>
-		      </article><!-- #post-## -->
-		    <?php endwhile; // end of the loop. ?>
+		      		<?php edit_post_link('Edit', '<span class="edit-link">', '</span>'); ?>
+		      </article>
+		    <?php endwhile; ?>
 		  </div>
 		</div>
 
@@ -43,32 +56,38 @@
 				</div>
 			<?php endif; ?>
 
-			<?php if(get_field('accolades') != NULL || get_field('detailed_bio') != NULL || have_rows('social')): ?>
+			<?php if($bio->get_info()['accolades'] || $bio->get_info()['detailed_bio'] || $bio::get_social()): ?>
 				<div id="details" class="col-md-4 lg-top-space <?php if(get_field('clients') != NULL): ?> col-md-offset-1<?php endif; ?>">
-					<?php if(get_field('accolades') != NULL): ?>
+					<?php if($bio->get_info()['accolades']): ?>
 						<h3>
-							<?php if (get_field('accolade_title')!= NULL): ?>
-								<?php the_field('accolade_title'); ?>
+							<?php if ($bio->get_info()['accolade_title']): ?>
+								<?php echo $bio->get_info()['accolade_title']; ?>
 							<?php else: ?>
 								accolades
 							<?php endif; ?>
 						</h3>
+
 						<div class="lg-bottom-space">
-							<?php the_field('accolades'); ?>
+							<?php echo $bio->get_info()['accolades']; ?>
 						</div>
 					<?php endif; ?>
 
-					<?php if(get_field('detailed_bio') != NULL): ?>
+					<?php if($bio->get_info()['detailed_bio']): ?>
 						<h3>detailed bio</h3>
-						<a href="<?php the_field('detailed_bio'); ?>" target="_blank"><span class="fa fa-file-pdf-o sm-right-space"></span>download pdf</a>
+						
+						<a href="<?php echo $bio->get_info()['detailed_bio']; ?>" target="_blank"><span class="fa fa-file-pdf-o sm-right-space"></span>download pdf</a>
 					<?php endif; ?>
 
-					<?php if (have_rows('social')): ?>
+					<?php if ($bio::get_social()): ?>
 						<div class="lg-top-space">
 							<h3>connect</h3>
-							<?php while(have_rows('social')): the_row(); // ACF ?>
-								<?php get_template_part('content-social'); ?>
-							<?php endwhile; ?>
+							<?php 
+							foreach($bio::get_social()['social'] as $social) {
+								set_query_var('url', $social['url']);
+								set_query_var('type', $social['type']);
+								get_template_part('partials/content','social');
+							}
+							?>
 						</div>
 					<?php endif; ?>
 				</div>
@@ -77,5 +96,5 @@
 	</div>
 </section>
 
-<?php get_template_part('content-contact'); ?>
 <?php get_footer(); ?>
+
