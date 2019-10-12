@@ -8,8 +8,8 @@ License: GNU General Public License v3.0 /
 License URI: http://www.gnu.org/licenses/gpl-3.0.html */
 
 
-@import 'includes/css/wordpress';
-@import 'includes/css/custom';
+@import 'wordpress';
+@import 'variables';
 
 //----------------------------------------------------------------------
 // General
@@ -400,7 +400,7 @@ a:not([class]) {
 }
 
 .general-image {
-	background-image: url('images/general-default.jpg')
+	background-image: url(../images/general-default.jpg);
 }
 
 //----------------------------------------------------------------------
@@ -409,6 +409,7 @@ a:not([class]) {
 
 .bg-dark {
 	color: $white;
+
 	h1, h2, h3, h4, h5, h6 {
 		color: $white;
 	}
@@ -663,4 +664,4 @@ textarea {
 //----------------------------------------------------------------------
 // Responsive
 //----------------------------------------------------------------------
-@import 'includes/css/responsive';
+@import 'responsive';

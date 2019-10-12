@@ -1,20 +1,4 @@
-@import 'custom';
-
-//----------------------------------------------------------------------
-// > XS - Custom, iPhone Retina
-//----------------------------------------------------------------------
-
-@media only screen and (min-width : 320px) {
-
-}
-
-//----------------------------------------------------------------------
-// XS - Extra Small Devices, Phones
-//----------------------------------------------------------------------
-
-@media only screen and (min-width : 480px) {
-
-}
+@import 'variables';
 
 //----------------------------------------------------------------------
 // SM - Small Devices, Tablets
@@ -95,39 +79,3 @@
     background-size: cover;
   }
 }
-
-
-/* menu override */
-/*@media only screen and (max-width:992px) {
-  .site-navigation {
-    .collapse {
-      display: none !important;
-    }
-    .collapse.in {
-      display: block !important;
-    }
-    .navbar #main-menu {
-      display: block;
-      margin: 0;
-    }
-    .navbar-header {
-      float: none;
-    }
-    .navbar-toggle {
-      display: block;
-      float: right;
-    }
-    .nav>li {
-      position: relative;
-      display: block;
-      float: none;
-      padding: 0;
-      a {
-        padding: 10px 0;
-      }
-    }
-    li.logo {
-      display: none !important;
-    }
-  }
-}*/
