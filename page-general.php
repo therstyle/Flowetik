@@ -1,8 +1,14 @@
 <?php 
 
 /* Template Name: General */ 
+
+require_once get_template_directory().'/Controllers/General.php';
+
+use Controllers\General as General;
+$general = new General();
+
 get_header(); 
-get_template_part('content-top-photo');
+get_template_part('partials/content','top-photo');
 
 ?>
 
@@ -16,16 +22,16 @@ get_template_part('content-top-photo');
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<header>
 								<h1 class="page-title"><?php the_title(); ?></h1>
-							</header><!-- .entry-header -->
+							</header>
 
 							<div class="entry-content">
 								<?php the_content(); ?>
-							</div><!-- .entry-content -->
+							</div>
 
 							<?php edit_post_link('Edit', '<footer class="entry-meta"><span class="edit-link">', '</span></footer>'); ?>
-						</article><!-- #post-## -->
+						</article>
 
-					<?php endwhile; // end of the loop. ?>
+					<?php endwhile; ?>
 				</div>
 			</div>
 		</div>
@@ -33,11 +39,18 @@ get_template_part('content-top-photo');
 <?php endif; ?>
 
 <div id="repeater-container">
-	<?php $count = 0; ?>
-	<?php if(have_rows('sections')): while(have_rows('sections')): the_row(); //ACF Reapeter Loop ?>
-		<?php include(locate_template('content-repeater-sections.php')); ?>
-		<?php $count++; ?>
-	<?php endwhile; endif; ?>
+	<?php 
+	if($general->get_sections()) {
+		foreach($general->get_sections()['section'] as $section) {
+			set_query_var('count', 0);
+			set_query_var('image', $section['image']);
+			set_query_var('title', $section['title']);
+			set_query_var('sub_title', $section['sub_title']);
+			set_query_var('content', $section['content']);
+			get_template_part('partials/content','repeater-sections');
+		}
+	} 
+	?>
 </div>
 
 <?php get_footer(); ?>

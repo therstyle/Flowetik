@@ -2,29 +2,28 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<h3 class="headline no-margin"><?php the_sub_field('title'); ?></h3>
-				<?php if (get_sub_field('sub_title') != NULL): ?>
-					<h3 class="sub-title"><?php the_sub_field('sub_title'); ?></h3>
+				<h3 class="headline no-margin"><?php echo $title; ?></h3>
+				<?php if ($sub_title): ?>
+					<h3 class="sub-title"><?php echo $sub_title; ?></h3>
 				<?php endif; ?>
 
 				<?php
-				$image = get_sub_field('image');
-				$size = 'full'; // (thumbnail, medium, large, full or custom size)
-				$attr = array(
+				$attr = [
 				'class' => 'lg-top-space'
-				);
+				];
 
 				if ($image) {
-					echo wp_get_attachment_image($image, $size, 0, $attr);
+					echo wp_get_attachment_image($image, 'full', 0, $attr);
 				}
 				?>
 			</div>
 			<div class="col-md-8 col-md-offset-1">
 				<div class="columns">
-					<?php the_sub_field('content'); ?>
+					<?php echo $content; ?>
 				</div>
 				<hr class="xl" />
 			</div>
 		</div>
 	</div>
 </section>
+<?php $count++; ?>

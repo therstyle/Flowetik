@@ -3,7 +3,7 @@
 /* Template Name: Team */ 
 
 	get_header(); 
-	get_template_part('content-top-photo');
+	get_template_part('partials/content','top-photo');
 ?>
 
 <section class="secondary">
