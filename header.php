@@ -62,9 +62,8 @@
 									</button>
 								</div>
 
-								<!-- The WordPress Menu goes here -->
 								<?php wp_nav_menu(
-									array(
+									[
 										'theme_location' 	=> 'primary',
 										'depth'             => 2,
 										'container'         => 'nav',
@@ -74,7 +73,7 @@
 										'fallback_cb' 		=> 'wp_bootstrap_navwalker::fallback',
 										'menu_id'			=> 'main-menu',
 										'walker' 			=> new wp_bootstrap_navwalker()
-									)
+									]
 								); ?>
 
 							</div><!-- .navbar -->
