@@ -1,3 +1,4 @@
+
 <section id="quick-contact">
   <div class="container">
     <div class="row">
@@ -7,7 +8,7 @@
             <?php dynamic_sidebar('contact'); ?>
             <?php if (have_rows('social', 'option')): ?>
   						<div class="lg-top-space">
-  							<?php while(have_rows('social', 'option')): the_row(); // ACF ?>
+  							<?php while(have_rows('social', 'option')): the_row(); ?>
   								<?php get_template_part('content-social'); ?>
   							<?php endwhile; ?>
   						</div>
