@@ -39,25 +39,25 @@ get_header();
 		</div>
 
 		<div class="row">
-			<?php if(have_rows('clients')):?>
+			<?php if($bio->get_clients()['clients']):?>
 				<div id="clients" class="col-md-7 lg-top-space">
 					<h3>previous clients</h3>
 					<div class="row">
-					<?php while(have_rows('clients')): the_row(); //ACF Reapeter Loop ?>
-						<div class="col-xs-12 col-sm-6 client">
-							<div class="panel panel-default text-center">
-								<div class="panel-body">
-									<img src="<?php the_sub_field('client_logo'); ?>" alt="<?php the_sub_field('client_name'); ?>">
+						<?php foreach($bio::get_clients()['clients'] as $client): ?>
+							<div class="col-xs-12 col-sm-6 client">
+								<div class="panel panel-default text-center">
+									<div class="panel-body">
+										<img src="<?php echo $client['client_logo']; ?>" alt="<?php echo $client['client_name']; ?>">
+									</div>
 								</div>
 							</div>
-						</div>
-					<?php endwhile; ?>
+						<?php endforeach; ?>
 					</div>
 				</div>
 			<?php endif; ?>
 
 			<?php if($bio->get_info()['accolades'] || $bio->get_info()['detailed_bio'] || $bio::get_social()): ?>
-				<div id="details" class="col-md-4 lg-top-space <?php if(get_field('clients') != NULL): ?> col-md-offset-1<?php endif; ?>">
+				<div id="details" class="col-md-4 lg-top-space <?php if($bio::get_clients()['clients']): ?> col-md-offset-1<?php endif; ?>">
 					<?php if($bio->get_info()['accolades']): ?>
 						<h3>
 							<?php if ($bio->get_info()['accolade_title']): ?>

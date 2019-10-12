@@ -14,6 +14,16 @@ class Bio {
     return $info;
   }
 
+  public static function get_clients() {
+    $clients = [
+      'clients' => get_field('clients'),
+      'name' => get_sub_field('client_name'),
+      'logo' => get_sub_field('client_logo')
+    ];
+
+    return $clients;
+  }
+
   public static function get_social() {
     $social = [
       'social' => get_field('social'),
