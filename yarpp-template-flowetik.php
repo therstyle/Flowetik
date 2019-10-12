@@ -15,7 +15,7 @@ Author: mitcho (Michael Yoshitaka Erlewine)
 		  <?php if (has_post_thumbnail()): ?>
 		    <div class="bottom-space">
 		      <a href="<?php the_permalink(); ?>">
-		      <?php the_post_thumbnail('article-thumb', array('class' => 'img-center')); ?>
+		      <?php the_post_thumbnail('article-thumb', ['class' => 'img-center']); ?>
 		      </a>
 		    </div>
 		  <?php endif; ?>
