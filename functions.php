@@ -195,8 +195,10 @@ $defaults = [
 add_theme_support('custom-header', $defaults);
 
 // Options Page
-if (function_exists('acf_add_options_page')) {
+if ( function_exists('acf_add_options_page')) {
 	acf_add_options_page();
+	acf_add_options_sub_page('General');
+	acf_add_options_sub_page('Footer');
 }
 
 // Custom WordPress nav walker.
