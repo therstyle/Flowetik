@@ -32,34 +32,8 @@ function rstyle_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	]);
-
-	register_sidebar([
-		'name'          => __('Sidebar Right', 'rstyle'),
-		'id'            => 'sidebar-right',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	]);
-
-	register_sidebar([
-		'name'          => __('Contact', 'rstyle'),
-		'id'            => 'contact',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="headline">',
-		'after_title'   => '</h3>',
-	]);
-
-	register_sidebar([
-		'name'          => __('Header', 'rstyle'),
-		'id'            => 'header',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	]);
 }
+
 add_action('widgets_init', 'rstyle_widgets_init');
 
 // Enqueue scripts and styles
