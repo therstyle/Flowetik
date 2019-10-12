@@ -1,29 +1,20 @@
-<?php if (have_posts()) : ?>
-
-<?php echo '<div class="row">'; // Begin bootstrap row output ?>
 <?php $count = 3; ?>
+<?php if (have_posts()) : ?>
+  <div class="row">
+    <?php while (have_posts()): the_post(); ?>
+      <?php get_template_part('partials/content','loop'); ?>
+      <?php $count++; ?>
 
-<?php while (have_posts()): the_post(); ?>
-  <?php get_template_part('content-loop'); ?>
-  <?php $count++; ?>
-
-  <?php // number of columns in row
-    if($count % 3 == 0)
-    {
-    echo '</div> <div class="row">';
-    }
-  ?>
-
-<?php endwhile;?>
-
-  <?php echo '</div><!-- end dynamic row -->'; // End bootstrap row output ?>
+      <?php if($count % 3 == 0): ?>
+        </div><div class="row">
+      <?php endif; ?>
+    <?php endwhile;?>
+  </div><!-- end dynamic row -->
 
 <?php else: ?>
-
   <div class="row">
     <div class="col-md-12">
     Sorry, no results found.
     </div>
   </div>
-
 <?php endif; ?>

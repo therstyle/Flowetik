@@ -1,6 +1,16 @@
-<?php get_header(); ?>
-<?php if (get_field('blog_image', 'option') != NULL): ?>
-  <section class="top-image" style="background-image:url(<?php the_field('blog_image', 'option'); ?>);"></section>
+<?php 
+
+require_once get_template_directory().'/Controllers/Blog.php';
+
+use Controllers\Blog as Blog;
+$blog = new Blog();
+
+get_header(); 
+
+?>
+
+<?php if($blog->get_info()['image']): ?>
+  <section class="top-image" style="background-image:url(<?php echo $blog->get_info()['image']; ?>);"></section>
 <?php endif; ?>
 
 <section>
@@ -8,45 +18,37 @@
     <div class="col-md-12">
       <h1 class="page-title lg-bottom-space">
         <?php
-        if (is_home)
-          {
-            if (get_field('blog_index_title', 'option') != NULL)
-             {
-              the_field('blog_index_title', 'option');
-             }
-            else
-              {
-              echo 'blog';
-              }
+        if (is_home()) {
+          if ($blog->get_info()['title']) {
+            echo $blog->get_info()['title'];
           }
+         else {
+          echo 'blog';
+          }
+        }
 
-        if (is_category())
-          {
+        if (is_category()) {
           single_cat_title();
-          }
+        }
 
-        if (is_author())
-          {
+        if (is_author()) {
           echo 'Author Archives for '.get_the_author();
-          }
+        }
 
-        if (is_tag())
-          {
+        if (is_tag()) {
           echo single_tag_title('', false).' Articles';
-          }
+        }
 
-        if (is_search())
-          {
-          printf( __('Search Results for: %s', 'rstyle' ), '<span>'.get_search_query().'</span>');
-          }
+        if (is_search()) {
+          printf('Search Results for: %s', '<span>'.get_search_query().'</span>');
+        }
         ?>
       </h1>
 
-      <?php get_template_part('loop'); ?>
-      <?php get_template_part('pagination'); ?>
+      <?php get_template_part('partials/loop'); ?>
+      <?php get_pagination(); ?>
     </div>
   </div>
 </section>
 
-<?php get_template_part('content-contact'); ?>
 <?php get_footer(); ?>

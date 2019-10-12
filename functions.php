@@ -129,7 +129,7 @@ function custom_view_article($more) {
 add_filter('excerpt_more', 'custom_view_article'); // Add 'View Article' button instead of [...] for Excerpts
 
 // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
-function rstyle_pagination() {
+function get_pagination() {
 	global $wp_query;
 	$big = 999999999;
 	echo paginate_links([
@@ -141,7 +141,7 @@ function rstyle_pagination() {
 	]);
 }
 
-add_action('init', 'rstyle_pagination');
+add_action('init', 'get_pagination');
 
 // Allow Shortcodes in widgets
 add_filter('widget_text', 'do_shortcode');
