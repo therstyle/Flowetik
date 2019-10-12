@@ -1,4 +1,10 @@
-<?php /* Template Name: Team */ get_header(); ?>
+<?php 
+
+/* Template Name: Team */ 
+	get_header(); 
+
+?>
+
 <?php get_template_part('content-top-photo'); ?>
 
 <section class="secondary">
@@ -16,7 +22,7 @@
 	        		<?php the_content(); ?>
 	        	</div><!-- .entry-content -->
 
-	        	<?php edit_post_link( __('Edit', 'rstyle'), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>'); ?>
+	        	<?php edit_post_link('Edit', '<footer class="entry-meta"><span class="edit-link">', '</span></footer>'); ?>
 	        </article><!-- #post-## -->
 
 	      <?php endwhile; // end of the loop. ?>

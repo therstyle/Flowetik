@@ -14,7 +14,11 @@ $count = 4;
   <div class="row">
     <?php while ($bio_query->have_posts()): $bio_query->the_post(); ?>
       <div <?php post_class('col-md-3 text-center grid-space'); ?>>
-        <p><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('bio-thumb', array('class' => 'img-center bio-portrait')); ?></a></p>
+        <p>
+          <a href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail('bio-thumb', array('class' => 'img-center bio-portrait')); ?>
+          </a>
+        </p>
 
         <h3 class="sub-title sm-bottom-space">
           <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -28,7 +32,7 @@ $count = 4;
       <?php if($count % 4 == 0): ?>
         </div><div class="row">
       <?php endif; ?>
-      
+
     <?php endwhile;?>
   </div><!-- end dynamic row -->
 

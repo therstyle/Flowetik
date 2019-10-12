@@ -1,3 +1,11 @@
+<?php
+
+require_once get_template_directory().'/Controllers/Footer.php';
+
+use Controllers\Footer as Footer;
+$footer = new Footer();
+
+?>
 
 <section id="quick-contact">
   <div class="container">
@@ -5,18 +13,31 @@
       <div class="col-xs-12">
         <div class="row">
           <div class="col-md-4 grid-space">
-            <?php dynamic_sidebar('contact'); ?>
-            <?php if (have_rows('social', 'option')): ?>
+            <?php if($footer->get_contact()['headline'] || $footer->get_contact()['text']): ?>
+              <?php if($footer->get_contact()['headline']): ?>
+                <h2 class="headline"><?php echo $footer->get_contact()['headline']; ?></h2>
+              <?php endif; ?>
+
+              <?php if($footer->get_contact()['text']): ?>
+                <?php echo $footer->get_contact()['text']; ?>
+              <?php endif; ?>
+            <?php endif; ?>
+            
+            <?php if($footer::get_social()): ?>
   						<div class="lg-top-space">
-  							<?php while(have_rows('social', 'option')): the_row(); ?>
-  								<?php get_template_part('content-social'); ?>
-  							<?php endwhile; ?>
+                <?php 
+                foreach($footer::get_social()['social'] as $social) {
+                  set_query_var('url', $social['url']);
+                  set_query_var('type', $social['type']);
+                  get_template_part('partials/content','social');
+                }
+                ?>
   						</div>
   					<?php endif; ?>
           </div>
 
           <div class="col-md-7 col-md-offset-1">
-            <?php echo do_shortcode('[formidable id=5]'); ?>
+            <?php echo do_shortcode('[formidable id='.$footer->get_contact()['id'].']'); ?>
           </div>
         </div>
       </div>

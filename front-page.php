@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'Controllers\FrontPage.php';
+require_once get_template_directory().'/Controllers/FrontPage.php';
 
 use Controllers\FrontPage as FrontPage;
 $front_page = new FrontPage();
@@ -172,5 +172,4 @@ get_header();
 	</div>
 </section>
 
-<?php get_template_part('partials/content', 'contact'); ?>
 <?php get_footer(); ?>

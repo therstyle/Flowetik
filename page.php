@@ -33,8 +33,4 @@ get_template_part('content-top-photo');
 	</section>
 <?php endif; ?>
 
-<?php if (!is_page('contact')): ?>
-	<?php get_template_part('partials/content', 'contact'); ?>
-<?php endif; ?>
-
 <?php get_footer(); ?>
