@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 grid-space">
-				<?php the_post_thumbnail('article', array('class' => 'img-center article-thumb')); ?>
+				<?php the_post_thumbnail('article', ['class' => 'img-center article-thumb']); ?>
 			</div>
 
 			<div class="col-md-7 col-md-offset-1">
@@ -34,7 +34,7 @@
 		      		<?php the_content(); ?>
 		      	</div><!-- .entry-content -->
 
-		      		<?php edit_post_link( __('Edit', 'rstyle'), '<span class="edit-link">', '</span>'); ?>
+		      		<?php edit_post_link('Edit', '<span class="edit-link">', '</span>'); ?>
 
 							<h3>share</h3>
 							<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox_nsuu"></div>
