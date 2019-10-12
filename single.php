@@ -37,7 +37,8 @@
 		      		<?php edit_post_link('Edit', '<span class="edit-link">', '</span>'); ?>
 
 							<h3>share</h3>
-							<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox_nsuu"></div>
+							<!-- Go to www.addthis.com/dashboard to customize your tools --> 
+							<div class="addthis_inline_share_toolbox_nsuu"></div>
 		      </article><!-- #post-## -->
 		    <?php endwhile; // end of the loop. ?>
 		  </div>

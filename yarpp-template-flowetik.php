@@ -1,9 +1,12 @@
 <?php
+
 /*
 YARPP Template: Flowetik
 Description: Requires a theme which supports post thumbnails
 Author: mitcho (Michael Yoshitaka Erlewine)
+
 */ ?>
+
 <h3>related posts you may like</h3>
 <?php if (have_posts()):?>
 <div class="row">
