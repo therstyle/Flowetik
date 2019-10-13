@@ -16,7 +16,7 @@ $count = 4;
       <div <?php post_class('col-md-3 text-center grid-space'); ?>>
         <p>
           <a href="<?php the_permalink(); ?>">
-            <?php the_post_thumbnail('bio-thumb', array('class' => 'img-center bio-portrait')); ?>
+            <?php the_post_thumbnail('bio-thumb', ['class' => 'img-center bio-portrait']); ?>
           </a>
         </p>
 
