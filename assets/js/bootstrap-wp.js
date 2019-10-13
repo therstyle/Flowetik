@@ -1,4 +1,4 @@
-jQuery(document).ready(function(jQuery) {
+jQuery(document).ready(function($) {
     //Animation on Scroll
     AOS.init({
       offset: 200,
@@ -9,34 +9,34 @@ jQuery(document).ready(function(jQuery) {
     });
 
     // Comments
-    jQuery('.comment-reply-link').addClass('btn btn-primary');
-    jQuery('#commentsubmit').addClass('btn btn-primary');
+    $('.comment-reply-link').addClass('btn btn-primary');
+    $('#commentsubmit').addClass('btn btn-primary');
 
     // WordPress Default Widgets
-    jQuery('input.search-field').addClass('form-control');
-    jQuery('input.search-submit').addClass( 'btn btn-default');
-    jQuery('.widget_rss ul').addClass('media-list');
-    jQuery('.widget_meta ul, .widget_recent_entries ul, .widget_archive ul, .widget_categories ul, .widget_nav_menu ul, .widget_pages ul').addClass('nav');
-    jQuery('.widget_recent_comments ul#recentcomments').css('list-style', 'none').css('padding-left', '0');
-    jQuery('.widget_recent_comments ul#recentcomments li').css('padding', '5px 15px');
-    jQuery('table#wp-calendar').addClass('table table-striped');
-    jQuery('ul.page-numbers').addClass('pagination');
-    jQuery('ul.pagination').removeClass('page-numbers');
-    jQuery('ul.pagination .current').parent().addClass('active');
-    jQuery('.widget_categories ul.nav').removeClass();
+    $('input.search-field').addClass('form-control');
+    $('input.search-submit').addClass( 'btn btn-default');
+    $('.widget_rss ul').addClass('media-list');
+    $('.widget_meta ul, .widget_recent_entries ul, .widget_archive ul, .widget_categories ul, .widget_nav_menu ul, .widget_pages ul').addClass('nav');
+    $('.widget_recent_comments ul#recentcomments').css('list-style', 'none').css('padding-left', '0');
+    $('.widget_recent_comments ul#recentcomments li').css('padding', '5px 15px');
+    $('table#wp-calendar').addClass('table table-striped');
+    $('ul.page-numbers').addClass('pagination');
+    $('ul.pagination').removeClass('page-numbers');
+    $('ul.pagination .current').parent().addClass('active');
+    $('.widget_categories ul.nav').removeClass();
 
     // Inputs
-    jQuery('input.search-field').addClass('form-control');
+    $('input.search-field').addClass('form-control');
 
     // Formidable
-    jQuery('.frm_forms input[type="text"], .frm_forms input[type="email"], .frm_forms input[type="number"], .frm_forms textarea, .frm_forms select').addClass('form-control');
-    jQuery('.form-field').addClass('form-group');
-    jQuery('.frm_submit').addClass('text-right');
-    jQuery('.frm_submit button').addClass('btn btn-primary');
+    $('.frm_forms input[type="text"], .frm_forms input[type="email"], .frm_forms input[type="number"], .frm_forms textarea, .frm_forms select').addClass('form-control');
+    $('.form-field').addClass('form-group');
+    $('.frm_submit').addClass('text-right');
+    $('.frm_submit button').addClass('btn btn-primary');
 
     // Animatescroll
-    jQuery('#video .down-arrow, .home .intro-scroll a').click(function(){
-      jQuery('#intro').animatescroll({padding:96});
+    $('#video .down-arrow, .home .intro-scroll a').click(function(){
+      $('#intro').animatescroll({padding:96});
     });
-    jQuery('.home .intro-scroll').removeClass('active');
+    $('.home .intro-scroll').removeClass('active');
 });
