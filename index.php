@@ -5,12 +5,13 @@ require_once get_template_directory().'/Controllers/Blog.php';
 use Controllers\Blog as Blog;
 $blog = new Blog();
 
-get_header(); 
+get_header();
+extract(get_vars($blog)); 
 
 ?>
 
-<?php if($blog->get_info()['image']): ?>
-  <section class="top-image" style="background-image:url(<?php echo $blog->get_info()['image']; ?>);"></section>
+<?php if($get_info['image']): ?>
+  <section class="top-image" style="background-image:url(<?php echo $get_info['image']; ?>);"></section>
 <?php endif; ?>
 
 <section>
@@ -19,8 +20,8 @@ get_header();
       <h1 class="page-title lg-bottom-space">
         <?php
         if (is_home()) {
-          if ($blog->get_info()['title']) {
-            echo $blog->get_info()['title'];
+          if ($get_info['title']) {
+            echo $get_info['title'];
           }
          else {
           echo 'blog';

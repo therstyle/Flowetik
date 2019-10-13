@@ -7,7 +7,8 @@ require_once get_template_directory().'/Controllers/General.php';
 use Controllers\General as General;
 $general = new General();
 
-get_header(); 
+get_header();
+extract(get_vars($general)); 
 get_template_part('partials/content','top-photo');
 
 ?>
@@ -40,8 +41,8 @@ get_template_part('partials/content','top-photo');
 
 <div id="repeater-container">
 	<?php 
-	if($general->get_sections()) {
-		foreach($general->get_sections()['section'] as $section) {
+	if($get_sections) {
+		foreach($get_sections['section'] as $section) {
 			set_query_var('count', 0);
 			set_query_var('image', $section['image']);
 			set_query_var('title', $section['title']);

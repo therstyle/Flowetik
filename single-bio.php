@@ -6,7 +6,7 @@ use Controllers\Bio as Bio;
 $bio = new Bio();
 
 get_header(); 
-
+extract(get_vars($bio));
 ?>
 
 <section class="general">
@@ -21,8 +21,8 @@ get_header();
 		      	<header>
 							<h1 class="page-title no-margin"><?php the_title(); ?></h1>
 							
-							<?php if($bio->get_info()['position']): ?>
-								<h3 class="sub-title"><?php echo $bio->get_info()['position']; ?></h3>
+							<?php if($get_info['position']): ?>
+								<h3 class="sub-title"><?php echo $get_info['position']; ?></h3>
 							<?php endif; ?>
 
 							<hr class="lg" />
@@ -39,11 +39,11 @@ get_header();
 		</div>
 
 		<div class="row">
-			<?php if($bio->get_clients()['clients']):?>
+			<?php if($get_clients['clients']):?>
 				<div id="clients" class="col-md-7 lg-top-space">
 					<h3>previous clients</h3>
 					<div class="row">
-						<?php foreach($bio::get_clients()['clients'] as $client): ?>
+						<?php foreach($get_clients['clients'] as $client): ?>
 							<div class="col-xs-12 col-sm-6 client">
 								<div class="panel panel-default text-center">
 									<div class="panel-body">
@@ -56,33 +56,33 @@ get_header();
 				</div>
 			<?php endif; ?>
 
-			<?php if($bio->get_info()['accolades'] || $bio->get_info()['detailed_bio'] || $bio::get_social()): ?>
-				<div id="details" class="col-md-4 lg-top-space <?php if($bio::get_clients()['clients']): ?> col-md-offset-1<?php endif; ?>">
-					<?php if($bio->get_info()['accolades']): ?>
+			<?php if($get_info['accolades'] || $get_info['detailed_bio'] || $get_social): ?>
+				<div id="details" class="col-md-4 lg-top-space <?php if($get_info['clients']): ?> col-md-offset-1<?php endif; ?>">
+					<?php if($get_info['accolades']): ?>
 						<h3>
-							<?php if ($bio->get_info()['accolade_title']): ?>
-								<?php echo $bio->get_info()['accolade_title']; ?>
+							<?php if ($get_info['accolade_title']): ?>
+								<?php echo $get_info['accolade_title']; ?>
 							<?php else: ?>
 								accolades
 							<?php endif; ?>
 						</h3>
 
 						<div class="lg-bottom-space">
-							<?php echo $bio->get_info()['accolades']; ?>
+							<?php echo $get_info['accolades']; ?>
 						</div>
 					<?php endif; ?>
 
-					<?php if($bio->get_info()['detailed_bio']): ?>
+					<?php if($get_info['detailed_bio']): ?>
 						<h3>detailed bio</h3>
 						
-						<a href="<?php echo $bio->get_info()['detailed_bio']; ?>" target="_blank"><span class="fa fa-file-pdf-o sm-right-space"></span>download pdf</a>
+						<a href="<?php echo $get_info['detailed_bio']; ?>" target="_blank"><span class="fa fa-file-pdf-o sm-right-space"></span>download pdf</a>
 					<?php endif; ?>
 
-					<?php if ($bio::get_social()): ?>
+					<?php if ($get_social): ?>
 						<div class="lg-top-space">
 							<h3>connect</h3>
 							<?php 
-							foreach($bio::get_social()['social'] as $social) {
+							foreach($get_social['social'] as $social) {
 								set_query_var('url', $social['url']);
 								set_query_var('type', $social['type']);
 								get_template_part('partials/content','social');

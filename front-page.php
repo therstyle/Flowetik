@@ -9,34 +9,34 @@ get_header();
 extract(get_vars($front_page));
 ?>
 
-<?php if($video_mp4 || $video_ogv): ?>
+<?php if($get_video['mp4']|| $get_video['ogv']): ?>
 	<div class="bg-video">
 		<div class="video">
-			<video autoplay="true" muted="true" loop="true" class="full-height" poster="<?php echo $front_page->get_video()['poster']; ?>">
-				<?php if($front_page->get_video()['mp4']): ?>
-					<source src="<?php echo $front_page->get_video()['mp4']; ?>" type="video/mp4" />
+			<video autoplay="true" muted="true" loop="true" class="full-height" poster="<?php echo $get_video['poster']; ?>">
+				<?php if($get_video['mp4']): ?>
+					<source src="<?php echo $get_video['mp4']; ?>" type="video/mp4" />
 				<?php endif; ?>
 
-				<?php if($front_page->get_video()['ogv']): ?>
-					<source src="<?php echo $front_page->get_video()['ogv']; ?>" type="video/ogv" />
+				<?php if($get_video['ogv']): ?>
+					<source src="<?php echo $get_video['ogv']; ?>" type="video/ogv" />
 				<?php endif; ?>
 			</video>
 		</div>
 	</div>
 
-	<?php if($front_page->get_video()['headline'] || $front_page->get_video()['sub_headline']): ?>
+	<?php if($get_video['headline'] || $get_video['sub_headline']): ?>
 		<section id="video" class="bg-dark">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
 						<article>
 							<header>
-								<?php if($front_page->get_video()['headline']): ?>
-									<h1><?php echo $front_page->get_video()['headline']; ?></h1>
+								<?php if($get_video['headline']): ?>
+									<h1><?php echo $get_video['headline']; ?></h1>
 								<?php endif; ?>
 								
-								<?php if($front_page->get_video()['sub_headline']): ?>
-									<h2 class="slogan"><?php echo $front_page->get_video()['sub_headline']; ?></h2>
+								<?php if($get_video['sub_headline']): ?>
+									<h2 class="slogan"><?php echo $get_video['sub_headline']; ?></h2>
 								<?php endif; ?>
 							</header>
 						</article>
@@ -59,37 +59,37 @@ extract(get_vars($front_page));
 			<div class="col-md-10 col-md-offset-1">
 				<div id="leaders" class="row xl-bottom-space">
 					<div class="col-md-5">
-						<?php if($front_page->get_leaders()['headline']): ?>
-							<h2 class="headline text-center"><?php echo $front_page->get_leaders()['headline']; ?></h2>
+						<?php if($get_leaders['headline']): ?>
+							<h2 class="headline text-center"><?php echo $get_leaders['headline']; ?></h2>
 						<?php endif; ?>
 
-						<?php if($front_page->get_leaders()['text']): ?>
-							<?php echo $front_page->get_leaders()['text']; ?>
+						<?php if($get_leaders['text']): ?>
+							<?php echo $get_leaders['text']; ?>
 						<?php endif; ?>
 					</div>
 
-					<?php if($front_page->get_leaders()['image']): ?>
+					<?php if($get_leaders['image']): ?>
 						<div class="col-md-5 col-md-offset-2" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="900">
-							<img src="<?php echo $front_page->get_leaders()['image']; ?>" class="img-center">
+							<img src="<?php echo $get_leaders['image']; ?>" class="img-center">
 						</div>
 					<?php endif; ?>
 				</div>
 				
 				<div id="promise" class="row xl-bottom-space">
-					<?php if($front_page->get_promise()['image']): ?>
+					<?php if($get_promise['image']): ?>
 						<div class="col-md-5" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="900">
-								<img src="<?php echo $front_page->get_promise()['image']; ?>" class="img-center">
+								<img src="<?php echo $get_promise['image']; ?>" class="img-center">
 						</div>
 					<?php endif; ?>
 
-					<?php if($front_page->get_promise()['headline'] || $front_page->get_promise()['text']): ?>
+					<?php if($get_promise['headline'] || $get_promise['text']): ?>
 						<div class="col-md-6 col-md-offset-1 grid-space">
-							<?php if($front_page->get_promise()['headline']): ?>
-								<h2 class="headline text-center"><?php echo $front_page->get_promise()['headline']; ?></h2>
+							<?php if($get_promise['headline']): ?>
+								<h2 class="headline text-center"><?php echo $get_promise['headline']; ?></h2>
 							<?php endif; ?>
 
-							<?php if($front_page->get_promise()['text']): ?>
-								<?php echo $front_page->get_promise()['text']; ?>
+							<?php if($get_promise['text']): ?>
+								<?php echo $get_promise['text']; ?>
 							<?php endif; ?>
 						</div>
 					<?php endif; ?>
@@ -97,15 +97,15 @@ extract(get_vars($front_page));
 
 				<div id="ideas" class="row">
 					<div class="col-xs-12">
-						<?php if($front_page->get_ideas()['headline'] || $front_page->get_ideas()['text']): ?>
+						<?php if($get_ideas['headline'] || $get_ideas['text']): ?>
 							<div class="row xl-bottom-space">
 								<div class="col-xs-12">
-									<?php if($front_page->get_ideas()['headline']): ?>
-										<h2 class="headline text-center"><?php echo $front_page->get_ideas()['headline']; ?></h2>
+									<?php if($get_ideas['headline']): ?>
+										<h2 class="headline text-center"><?php echo $get_ideas['headline']; ?></h2>
 									<?php endif; ?>
 
-									<?php if($front_page->get_ideas()['text']): ?>
-										<?php echo $front_page->get_ideas()['text'] ?>
+									<?php if($get_ideas['text']): ?>
+										<?php echo $get_ideas['text'] ?>
 									<?php endif; ?>
 								</div>
 							</div>
@@ -113,8 +113,8 @@ extract(get_vars($front_page));
 
 						<div class="row">
 							<div class="col-md-8">
-								<?php if($front_page::get_idea()): ?>
-									<?php foreach($front_page::get_idea()['idea'] as $idea): ?>
+								<?php if($get_idea): ?>
+									<?php foreach($get_idea['idea'] as $idea): ?>
 										<h3><?php echo $idea['headline']; ?></h3>
 										<div class="lg-bottom-space">
 											<?php echo $idea['text']; ?>
@@ -123,9 +123,9 @@ extract(get_vars($front_page));
 								<?php endif; ?>
 							</div>
 
-							<?php if($front_page->get_ideas()['text']): ?>
+							<?php if($get_ideas['text']): ?>
 								<div class="col-md-4" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="900">
-									<img src="<?php echo $front_page->get_ideas()['image']; ?>" class="img-center">
+									<img src="<?php echo $get_ideas['image']; ?>" class="img-center">
 								</div>
 							<?php endif; ?>
 						</div>
@@ -140,8 +140,8 @@ extract(get_vars($front_page));
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<?php if ($front_page->get_testimonials()['headline']): ?>
-					<h2 class="headline text-center"><?php echo $front_page->get_testimonials()['headline']; ?></h2>
+				<?php if ($get_testimonials['headline']): ?>
+					<h2 class="headline text-center"><?php echo $get_testimonials['headline']; ?></h2>
 				<?php endif; ?>
 
 				<div id="testimonial-slider" class="carousel slide" data-ride="carousel">
@@ -157,13 +157,13 @@ extract(get_vars($front_page));
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<?php if($front_page->get_team()['headline']): ?>
-					<h2 class="headline text-center"><?php echo $front_page->get_team()['headline']; ?></h2>
+				<?php if($get_team['headline']): ?>
+					<h2 class="headline text-center"><?php echo $get_team['headline']; ?></h2>
 				<?php endif; ?>
 
-				<?php if($front_page->get_team()['text']): ?>
+				<?php if($get_team['text']): ?>
 					<div class="xl-bottom-space">
-						<?php $front_page->get_team()['text']; ?>
+						<?php $get_team['text']; ?>
 					</div>
 				<?php endif; ?>
 
