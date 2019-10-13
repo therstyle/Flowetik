@@ -9,6 +9,9 @@ add_theme_support('automatic-feed-links');
 // Enable support for Post Thumbnails on posts and pages
 add_theme_support('post-thumbnails');
 
+//Title tag support
+add_theme_support( 'title-tag' );
+
 // Add Thumbnail Theme Support
 add_theme_support('post-thumbnails');
 add_image_size('video_poster', 1920, 1080, true);
