@@ -1,0 +1,82 @@
+@import "variables";
+
+//----------------------------------------------------------------------
+// SM - Small Devices, Tablets
+//----------------------------------------------------------------------
+
+@media only screen and (min-width: $sm-tablet) {
+  #header {
+    .navbar-right {
+      margin-top: $spacing;
+    }
+
+    .logo {
+      min-width: 160px;
+      max-width: 160px;
+    }
+  }
+
+  #video {
+    h1 {
+      font-size: 102px;
+      margin-bottom: $xl-spacing;
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: $sm-tablet) {
+  section {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  #video {
+    .absolute {
+      left: 0;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  #footer {
+    .col-xs-12 {
+      .pull-left, 
+      .pull-right {
+        float: none !important;
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------
+// MD - Medium Devices, Desktops
+//----------------------------------------------------------------------
+
+@media only screen and (max-width: $md-tablet) {
+  .grid-space {
+    margin-bottom: $spacing !important;
+  }
+
+  #promise {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  img.bio-portrait {
+    max-width: 75%;
+  }
+}
+
+//----------------------------------------------------------------------
+// LG - Large Devices, Wide Screens
+//----------------------------------------------------------------------
+
+@media only screen and (min-width: $large-desktop) {
+  .top-image {
+    background-size: cover;
+  }
+}
