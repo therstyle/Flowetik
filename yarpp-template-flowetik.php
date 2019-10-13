@@ -50,10 +50,10 @@ extract(get_vars($blog));
 		      <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		    </div>
 		  </div>
-		</article><!-- #post-## -->
+		</article>
 	<?php endwhile; ?>
 </div>
 
 <?php else: ?>
-<p>No related photos.</p>
+	<p>No related photos.</>
 <?php endif; ?>
