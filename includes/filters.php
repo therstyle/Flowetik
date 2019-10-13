@@ -9,11 +9,9 @@ add_filter('script_loader_src', 'remove_script_version');
 add_filter('style_loader_src', 'remove_script_version');
 
 //Login Page
-function login_url() {
-	return 'http://rstyledesign.com';
-}
-
-add_filter('login_headerurl', 'logo_url');
+add_filter( 'login_headerurl', function() {
+  return 'https://rstyledesign.com';
+});
 
 // Custom excerpt length
 function long_excerpt($length) {

@@ -36,12 +36,18 @@ function move_wp_jquery() {
 add_action('wp_enqueue_scripts', 'move_wp_jquery');
 
 // Login Logo & Link
-function custom_login_css() {
-	wp_register_style('login-style', get_template_directory_uri() . '/includes/css/login.css', array(), '1.0', 'all');
-	wp_enqueue_style('login-style');
-}
-
-add_action('login_head', 'custom_login_css');
+add_action( 'login_enqueue_scripts', function() {
+	echo '<style type="text/css">
+	#login h1 a, .login h1 a {
+			background-image: url('.get_template_directory_uri().'/assets/images/rstyle-design-logo.svg);
+	height:100px;
+	width:300px;
+	background-size: 310px 64px;
+	background-repeat: no-repeat;
+	padding-bottom: 10px;
+	}
+</style>';
+});
 
 // Register widgetized area and update sidebar with default widgets
 function rstyle_widgets_init() {
