@@ -260,3 +260,22 @@ if ( function_exists('acf_add_options_page')) {
 
 // Custom WordPress nav walker.
 require get_template_directory() . '/bootstrap-wp-navwalker.php';
+
+
+function get_vars($class_name) {
+	//$class = new ReflectionClass($class_name);
+	//$class_methods = $class->getMethods();
+	//return $class_methods;
+	
+	$class_methods = get_class_methods($class_name);
+	$data = [];
+
+	foreach ($class_methods as $class_method) {
+		//$class_method = $class_method.'()';
+		//extract($class_name->{$class_method}());
+		//array_push($data, [$class_method => $class_name->{$class_method}()]);
+		$data[$class_method] = $class_name->{$class_method}();
+	}
+
+	return $data;
+}

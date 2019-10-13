@@ -35,7 +35,8 @@ jQuery(document).ready(function($) {
     $('.frm_submit button').addClass('btn btn-primary');
 
     // Animatescroll
-    $('#video .down-arrow, .home .intro-scroll a').click(function(){
+    $('#video .down-arrow, .home .intro-scroll a').click(function(e){
+      e.preventDefault();
       $('#intro').animatescroll({padding:96});
     });
     $('.home .intro-scroll').removeClass('active');

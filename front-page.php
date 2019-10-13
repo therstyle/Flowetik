@@ -6,9 +6,10 @@ use Controllers\FrontPage as FrontPage;
 $front_page = new FrontPage();
 
 get_header();
+extract(get_vars($front_page));
 ?>
 
-<?php if($front_page->get_video()['mp4'] || $front_page->get_video()['ogv']): ?>
+<?php if($video_mp4 || $video_ogv): ?>
 	<div class="bg-video">
 		<div class="video">
 			<video autoplay="true" muted="true" loop="true" class="full-height" poster="<?php echo $front_page->get_video()['poster']; ?>">

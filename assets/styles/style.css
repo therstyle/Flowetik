@@ -267,10 +267,10 @@ body {
 body:not(.home) {
   padding-top: 114px;
 }
-body.page-has-top-image, body.blog {
+body.page.has-top-image, body.blog {
   padding-top: 0;
 }
-body.page-has-top-image #wrapper, body.blog #wrapper {
+body.page.has-top-image #wrapper, body.blog #wrapper {
   min-height: 100vh;
 }
 

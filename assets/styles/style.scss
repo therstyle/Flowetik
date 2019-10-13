@@ -28,9 +28,10 @@ body {
 		padding-top: $header-height - 2px;
 	}
 
-	&.page-has-top-image, 
+	&.page.has-top-image, 
 	&.blog {
 		padding-top: 0;
+
 		#wrapper {
 			min-height: 100vh;
 		}
