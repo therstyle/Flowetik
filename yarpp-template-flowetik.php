@@ -5,13 +5,32 @@ YARPP Template: Flowetik
 Description: Requires a theme which supports post thumbnails
 Author: mitcho (Michael Yoshitaka Erlewine)
 
-*/ ?>
+*/
 
-<h3>related posts you may like</h3>
+require_once get_template_directory().'/Controllers/Blog.php';
+
+use Controllers\Blog as Blog;
+$blog = new Blog();
+
+extract(get_vars($blog)); 
+
+?>
+
+<h3>
+	<?php 
+	if($get_info['related_posts_text']) {
+		echo $get_info['related_posts_text'];
+	}
+	else {
+		echo 'related posts you may like';
+	}
+	?>
+</h3>
+
 <?php if (have_posts()):?>
-<div class="row">
-	<?php while (have_posts()) : the_post(); ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class('lg-bottom-space col-sm-6 col-xs-12'); ?>>
+	<div class="row">
+		<?php while (have_posts()) : the_post(); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class('lg-bottom-space col-sm-6 col-xs-12'); ?>>
 		  <?php if (has_post_thumbnail()): ?>
 		    <div class="bottom-space">
 		      <a href="<?php the_permalink(); ?>">
