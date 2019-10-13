@@ -451,11 +451,6 @@ p:empty {
   min-height: 100vh;
 }
 
-body.home .bg-video {
-  background: #98878F url(video/flowetik-poster.jpg) no-repeat bottom right fixed;
-  background-size: cover;
-}
-
 #header {
   padding: 10px 0;
   font-family: "Fjalla One", sans-serif;

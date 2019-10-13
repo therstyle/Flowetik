@@ -227,11 +227,6 @@ p:empty {
 	}
 }
 
-body.home .bg-video {
-  background: $cloud url(video/flowetik-poster.jpg) no-repeat bottom right fixed;
-	background-size: cover;
-}
-
 #header {
 	padding: $sm-spacing 0;
 	font-family: $headline-font;
