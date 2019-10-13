@@ -38,7 +38,15 @@ $headline-font: 'Fjalla One', sans-serif;
 //----------------------------------------------------------------------
 
 $spacing: 20px;
-$sm-spacing: $spacing/2;
-$lg-spacing: $spacing*2;
-$xl-spacing: $spacing*4;
+$sm-spacing: $spacing / 2;
+$lg-spacing: $spacing * 2;
+$xl-spacing: $spacing * 4;
 $header-height: 116px;
+
+//----------------------------------------------------------------------
+// Breakpoints
+//----------------------------------------------------------------------
+
+$sm-tablet: 768px;
+$md-tablet: 992px;
+$large-desktop: 1920px;
