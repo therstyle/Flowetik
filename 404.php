@@ -6,6 +6,7 @@ use Controllers\Error404 as Error404;
 $error = new Error404();
 
 get_header(); 
+extract(get_vars($error));
 
 ?>
 
@@ -15,8 +16,8 @@ get_header();
       <header>
     		<h1 class="page-title">
 					<?php 
-					if($error->get_info()['headline']) {
-						echo $error->get_info()['headline'];
+					if($get_info['headline']) {
+						echo $get_info['headline'];
 					}
 					else {
 						echo '404';
@@ -26,8 +27,8 @@ get_header();
     	</header><!-- .page-header -->
 
     	<div class="page-content">
-				<?php if( $error->get_info()['text']) {
-					echo $error->get_info()['text'];
+				<?php if( $get_info['text']) {
+					echo $get_info['text'];
 				}
 				?>
 				<a href="<?php echo home_url(); ?>" class="btn btn-default">Return Home?</a>
