@@ -1,5 +1,10 @@
 <?php
 
+require_once get_template_directory().'/Controllers/Bio.php';
+
+use Controllers\Bio as Bio;
+$bio = new Bio();
+
 $args = [
   'post_type' => 'bio',
   'nopaging' => true
@@ -23,8 +28,8 @@ $count = 4;
         <h3 class="sub-title sm-bottom-space">
           <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h3>
-
-        <small><?php the_field('position'); ?></small>
+        
+        <small><?php echo $bio->get_info()['position']; ?></small>
       </div>
 
       <?php $count++; ?>
