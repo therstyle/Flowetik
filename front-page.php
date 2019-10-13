@@ -11,7 +11,7 @@ get_header();
 <?php if($front_page->get_video()['mp4'] || $front_page->get_video()['ogv']): ?>
 	<div class="bg-video">
 		<div class="video">
-			<video autoplay="true" muted="true" loop="true" class="full-height">
+			<video autoplay="true" muted="true" loop="true" class="full-height" poster="<?php echo $front_page->get_video()['poster']; ?>">
 				<?php if($front_page->get_video()['mp4']): ?>
 					<source src="<?php echo $front_page->get_video()['mp4']; ?>" type="video/mp4" />
 				<?php endif; ?>

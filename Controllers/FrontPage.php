@@ -8,7 +8,8 @@ class FrontPage {
       'headline' => get_field('video_headline'),
       'sub_headline' => get_field('video_sub_headline'), 
       'mp4' => get_field('video_mp4'),
-      'ogv' => get_field('video_ogv')
+      'ogv' => get_field('video_ogv'),
+      'poster' => wp_get_attachment_image_src(get_field('video_poster'), 'video_poster')[0],
     ];
 
     return $video;

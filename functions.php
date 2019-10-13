@@ -11,6 +11,7 @@ add_theme_support('post-thumbnails');
 
 // Add Thumbnail Theme Support
 add_theme_support('post-thumbnails');
+add_image_size('video_poster', 1920, 1080, true);
 add_image_size('top-image', 1920, 600, true);
 add_image_size('bio', 500, 700, true);
 add_image_size('bio-thumb', 215, 300, true);
