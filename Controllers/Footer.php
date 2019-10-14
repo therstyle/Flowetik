@@ -13,7 +13,7 @@ class Footer {
     return $contact;
   }
 
-  public static function get_social() {
+  public function get_social() {
     $social = [
       'social' => get_field('social', 'option'),
       'type' => get_sub_field('type'),
