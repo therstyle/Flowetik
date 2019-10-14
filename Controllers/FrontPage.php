@@ -45,7 +45,7 @@ class FrontPage {
     return $ideas;
   }
 
-  public static function get_idea() {
+  public function get_idea() {
     $idea = [
       'idea' => get_field('idea'),
       'headline' => get_sub_field('idea_headline'),

@@ -3,7 +3,7 @@
 namespace Controllers;
 
 class General {
-  public static function get_sections() {
+  public function get_sections() {
     $section = [
       'section' => get_field('sections'),
       'image' => get_sub_field('section'),

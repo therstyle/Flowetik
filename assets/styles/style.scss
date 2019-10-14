@@ -660,6 +660,13 @@ textarea {
 // Misc/Browser Tweaks
 //----------------------------------------------------------------------
 
+#testimonials,
+#footer {
+	path.st0 {
+		fill: #fff;
+	}
+}
+
 ::selection, ::-webkit-selection, ::-moz-selection {
 	background: #04A4CC;
 	color: $white;
