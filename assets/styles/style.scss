@@ -494,7 +494,14 @@ section.repeater-general {
 .carousel-indicators {
 	position: static;
 	width: auto;
-	margin: $spacing 0 0 0
+	margin: $spacing 0 0 0;
+
+	li,
+	li.active {
+		margin: 3px;
+		width: 10px;
+		height: 10px;
+	}
 }
 
 .type-bio {
