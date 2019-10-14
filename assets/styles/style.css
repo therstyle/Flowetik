@@ -579,7 +579,8 @@ a:not([class]):focus {
   max-width: 95px;
 }
 
-.down-arrow {
+.down-arrow,
+#video svg {
   width: 100%;
   max-width: 44px;
   fill: #FFFFFF;
@@ -648,12 +649,14 @@ section.repeater-general:last-of-type hr {
   bottom: 80px;
 }
 
-.down-arrow {
+.down-arrow,
+#video svg {
   animation: 3s scroll-down infinite ease-in;
   animation-fill-mode: both;
   position: relative;
 }
-.down-arrow:hover {
+.down-arrow:hover,
+#video svg:hover {
   animation-play-state: paused;
   cursor: pointer;
 }
