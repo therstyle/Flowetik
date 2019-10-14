@@ -389,7 +389,8 @@ a:not([class]) {
 	max-width: 95px;
 }
 
-.down-arrow {
+.down-arrow,
+#video svg {
 	width: 100%;
 	max-width: 44px;
 	fill: $white;
@@ -472,7 +473,8 @@ section.repeater-general {
 	}
 }
 
-.down-arrow {
+.down-arrow,
+#video svg {
 	animation: 3s scroll-down infinite ease-in;
 	animation-fill-mode: both;
 	position: relative;
