@@ -672,6 +672,12 @@ section.repeater-general:last-of-type hr {
   width: auto;
   margin: 20px 0 0 0;
 }
+.carousel-indicators li,
+.carousel-indicators li.active {
+  margin: 3px;
+  width: 10px;
+  height: 10px;
+}
 
 .type-bio small {
   display: block;
