@@ -2,5 +2,5 @@
 Flowetik WordPress Theme
 
 <p align="center">
-  <img src="https://chrisrobertsweb.dev/github/flowetik.jpg">
+  <img src="https://assets.chrisrobertsweb.dev/github/flowetik.webp">
 </p>
